@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Mobile - Install di HP</title>
+    <!-- PWA Configuration -->
+    <meta name="theme-color" content="#3B82F6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Absensi Guru">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Absensi Guru">
+    
+    <!-- App Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMzQjgyRjYiLz4KPHBhdGggZD0iTTQ4IDY0SDE0NFY4MEg0OFY2NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OCA5NkgxNDRWMTEySDQ4Vjk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4IDEyOEgxMTJWMTQ0SDQ4VjEyOFoiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjEzNiIgcj0iMTYiIGZpbGw9IiMxMEI5ODEiLz4KPHBhdGggZD0iTTEzNiAxMzZMMTQwIDE0MEwxNTIgMTI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMzQjgyRjYiLz4KPHBhdGggZD0iTTQ4IDY0SDE0NFY4MEg0OFY2NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OCA5NkgxNDRWMTEySDQ4Vjk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4IDEyOEgxMTJWMTQ0SDQ4VjEyOFoiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjEzNiIgcj0iMTYiIGZpbGw9IiMxMEI5ODEiLz4KPHBhdGggZD0iTTEzNiAxMzZMMTQwIDE0MEwxNTIgMTI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFic2Vuc2kgR3VydSAtIEFwbGlrYXNpIEFic2Vuc2kgU2Vrb2xhaCIsCiAgInNob3J0X25hbWUiOiAiQWJzZW5zaSBHdXJ1IiwKICAiZGVzY3JpcHRpb24iOiAiQXBsaWthc2kgYWJzZW5zaSBndXJ1IGRhbiBzaXN3YSB5YW5nIG11ZGFoLCBjZXBhdCwgZGFuIGFrdXJhdCIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIiwKICAidGhlbWVfY29sb3IiOiAiIzNCODJGNiIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiY2F0ZWdvcmllcyI6IFsiZWR1Y2F0aW9uIiwgInByb2R1Y3Rpdml0eSIsICJ1dGlsaXRpZXMiXSwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRreUlpQm9aV2xuYUhROUlqa3lJaUJXYVdWM1FtOTRQU0l3SURBZ01Ua3lJREU1TWlJZ1ptbHNiRDBpYm05dVpTSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklqNEtQSEpsWTNRZ2QybGtkR2c5SWpFNU1pSWdhR1ZwWjJoMFBTSXhPVElpSUhKNFBTSXlOQ0lnWm1sc2JEMGlJek5DT0RKR05pSXZQZ284Y0dGMGFDQmtQU0pOTkRnZ05qUklNVFEwVmpnd1NEUTRWalkwV2lJZ1ptbHNiRDBpZDJocGRHVWlMejRLUEhCaGRHZ2daRDBpVFRRNElEazJTREUwTkZZeE1USklORGhXT1RaYUlpQm1hV3hzUFNKM2FHbDBaU0l2UGdvOGNHRjBhQ0JrUFNKTk5EZ2dNVEk0U0RFeE1sWXhORFJJTkRoV01USTRXaUlnWm1sc2JEMGlkMmhwZEdVaUx6NEtQR05wY21Oc1pTQmplRDBpTVRRMElpQmplVDBpTVRNMklpQnlQU0l4TmlJZ1ptbHNiRDBpSXpFd1FqazRNU0l2UGdvOGNHRjBhQ0JrUFNKTk1UTTJJREV6TmtzeE5EQWdNVFEwVERFMU1pQXhNamhpSUhOMGNtOXJaVDBpZDJocGRHVWlJSE4wY205clpTMTNhV1IwYUQwaU15SWdjM1J5YjJ0bExXeHBibVZqWVhBOUluSnZkVzVrSWlCemRISnZhMlV0YkdsdVpXcHZhVzQ5SW5KdmRXNWtJaTgrQ2p3dmMzWm5QZ289PSIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnZG1sbGQwSnZlRDBpTUNBd0lEVXhNaUExTVRJaUlHWnBiR3c5SW01dmJtVWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStDanh5WldOMElIZHBaSFJvUFNJMU1USWlJR2hsYVdkb2REMGlOVEV5SWlCeWVEMGlNelFpSUdacGJHdzlJaU16UWpneVJqWWlMejRLUEhCaGRHZ2daRDBpVFRjNElERTBTREkwTUZZeU1EaElOemhXTVRRNFdpSWdabWxzYkQwaWQyaHBkR1VpTHo0S1BIQmhkR2dnWkQwaVRUYzRJREkwU0VJME1GWXlOREJJTnpoV01qUTRXaUlnWm1sc2JEMGlkMmhwZEdVaUx6NEtQSEJoZEdnZ1pEMGlUVGM0SURNME5FZ3lOVFlXTXpZd1NEYzRWak0wTkZvaUlHWnBiR3c5SW5kb2FYUmxJaTgrQ2p4amFYSmpiR1VnWTNnOUlqSTFOaUlnWTNrOUlqTTJOQ0lnY2owaU16SWlJR1pwYkd3OUlpTXhNRUk1T0RFaUx6NEtQSEJoZEdnZ1pEMGlUVEkwT0NBeU5qUk1NalV5SURJNE1FeE16QTBJREkySWlCemRISnZhMlU5SW5kb2FYUmxJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqUWlJSE4wY205clpTMXNhVzVsWTJGd1BTSnliM1Z1WkNJZ2MzUnliMnRsTFd4cGJtVnFiMmx1UFNKeWIzVnVaQ0l2UGdvOEwzTjJaejQ9IiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0sCiAgInNjcmVlbnNob3RzIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU16QXdJaUJvWldsbmFIUTlJall3TUNJZ2RtbGxkMEp2ZUQwaU1DQXdJRE13TUNBM01EQWlJR1pwYkd3OUltNXZibVVpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrQ2p4eVpXTjBJSGRwWkhSb1BTSXpNREFpSUdobGFXZG9kRDBpTmpBd0lpQnllRDBpTVRZaUlHWnBiR3c5SWlNek9EZ3pSamdpTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpRd0lpQjNhV1IwYUQwaU1qWXdJaUJvWldsbmFIUTlJalF3SWlCeWVEMGlPQ0lnWm1sc2JEMGlkMmhwZEdVaUx6NEtQSFJsZUhRZ2VEMGlNVFV3SWlCNVBTSTJOQ0lnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJZ1ptbHNiRDBpSXpNNE9ETkdPQ0lnWm05dWRDMXphWHBsUFNJeU5DSWdabTl1ZEMxM1pXbG5hSFE5SW1KdmJHUWlQa0ZpYzJWdWMya2dSM1Z5ZFR3dmRHVjRkRDRLUEhSbGVIUWdlRDBpTVRVd0lpQjVQU0k1TkNJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSWdabWxzYkQwaUl6WXpOek0zTnlJZ1ptOXVkQzF6YVhwbFBTSXhOaUlnWm05dWRDMTNaV2xuYUhROUltNXZjbTFoYkNJK1EyOXVkSEp2YkNCQlluTmxibk5wUEM5MFpYaDBQZ284Y21WamRDQjRQU0l5TUNJZ2VUMGlNVEV3SWlCM2FXUjBhRDBpTWpZd0lpQm9aV2xuYUhROUlqUXdJaUJ5ZUQwaU9DSWdabWxzYkQwaUl6RTFPVGMxT1NJdlBnbzhkR1Y0ZENCNFBTSXhOVEFpSUhrOUlqRTBNQ0lnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJZ1ptbHNiRDBpSXpNNE9ETkdPQ0lnWm05dWRDMXphWHBsUFNJeE5pSWdabTl1ZEMxM1pXbG5hSFE5SW01dmNtMWhiQ0krUVdKelpXNGdUV0Z6ZFdzZ0ppQlFkV3hoYm1jOEwzUmxlSFErQ2p4amFYSmpiR1VnWTNnOUlqRTFNQ0lnWTNrOUlqRTRNQ0lnY2owaU1qQWlJR1pwYkd3OUlpTXhNRUk1T0RFaUx6NEtQSEJoZEdnZ1pEMGlUVEV6T0NBeE56aE1NVFF5SURFNE1reE1NVFE0SURFMk9DSWdjM1J5YjJ0bFBTSjNhR2wwWlNJZ2MzUnliMnRsTFhkcFpIUm9QU0l6SWlCemRISnZhMlV0YkdsdVpXTmhjRDBpY205MWJtUWlJSE4wY205clpTMXNhVzVsYW05cGJqMGljbTkxYm1RaUx6NEtQQzl6ZG1jK0lnPT0iLAogICAgICAic2l6ZXMiOiAiMzAweDYwMCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAiZm9ybV9mYWN0b3IiOiAid2lkZSIsCiAgICAgICJsYWJlbCI6ICJBcGxpa2FzaSBBYnNlbnNpIEd1cnUiCiAgICB9CiAgXSwKICAicHJvdG9jb2xfaGFuZGxlcnMiOiBbCiAgICB7CiAgICAgICJwcm90b2NvbCI6ICJ3ZWIrYWJzZW5zaSIsCiAgICAgICJ1cmwiOiAiLz9hY3Rpb249JXMiCiAgICB9CiAgXSwKICAic2hhcmVfdGFyZ2V0IjogewogICAgImFjdGlvbiI6ICIvP3NoYXJlPXRydWUiLAogICAgIm1ldGhvZCI6ICJHRVQiLAogICAgImVuY3R5cGUiOiAiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwKICAgICJwYXJhbXMiOiB7CiAgICAgICJ0aXRsZSI6ICJ0aXRsZSIsCiAgICAgICJ0ZXh0IjogInRleHQiLAogICAgICAidXJsIjogInVybCIKICAgIH0KICB9Cn0K">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .scanner-line {
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(300%); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">📱 Absensi Mobile</h1>
+            <p class="text-gray-600">Install aplikasi di HP untuk absensi mudah</p>
+            
+            <!-- Install App Button -->
+            <div id="installPrompt" class="hidden mt-4">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📲</span>
+                        <div class="text-left">
+                            <h3 class="font-bold text-blue-800">Install Aplikasi</h3>
+                            <p class="text-blue-700 text-sm">Tambahkan ke layar utama HP</p>
+                        </div>
+                    </div>
+                    <button id="installButton" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                        📱 Install Sekarang
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Manual Install Instructions -->
+            <div id="manualInstall" class="mt-4">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 max-w-md mx-auto">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-green-600">💡</span>
+                        <h3 class="font-bold text-green-800">Cara Install di HP</h3>
+                    </div>
+                    <div class="text-left text-sm text-green-700 space-y-3">
+                        <div>
+                            <div class="font-semibold mb-1">📱 Android (Chrome/Edge):</div>
+                            <div class="ml-2 space-y-1">
+                                <div>1. Buka link ini di browser HP</div>
+                                <div>2. Tap menu (⋮) di pojok kanan atas</div>
+                                <div>3. Pilih "Tambahkan ke layar utama"</div>
+                                <div>4. Tap "Tambah" untuk konfirmasi</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-semibold mb-1">🍎 iPhone (Safari):</div>
+                            <div class="ml-2 space-y-1">
+                                <div>1. Buka link ini di Safari</div>
+                                <div>2. Tap tombol bagikan (📤) di bawah</div>
+                                <div>3. Scroll dan pilih "Tambah ke Layar Utama"</div>
+                                <div>4. Tap "Tambah" untuk konfirmasi</div>
+                            </div>
+                        </div>
+                        <div class="bg-green-100 p-2 rounded text-xs">
+                            <strong>✅ Setelah install:</strong> Aplikasi akan muncul di layar utama HP seperti aplikasi lainnya dan bisa digunakan offline!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- School Connection for Teachers -->
+            <div id="schoolConnection" class="mt-4">
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 max-w-md mx-auto">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-yellow-600">🏫</span>
+                        <span class="font-medium text-yellow-800">Hubungkan ke Sekolah</span>
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <input type="text" id="schoolId" placeholder="Masukkan kode sekolah dari admin" 
+                               class="flex-1 px-3 py-2 border border-yellow-300 rounded text-sm">
+                        <button id="connectSchool" class="bg-yellow-500 text-white px-4 py-2 rounded text-sm hover:bg-yellow-600">
+                            Hubungkan
+                        </button>
+                    </div>
+                    <div id="connectionStatus" class="text-xs text-yellow-700">
+                        Minta kode sekolah dari admin untuk sinkronisasi data
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hosting Instructions -->
+            <div class="mt-4">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto mb-3">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-red-600">⚠️</span>
+                        <span class="font-medium text-red-800">Perlu Hosting Online</span>
+                    </div>
+                    <div class="text-sm text-red-700 mb-3">
+                        File ini hanya bisa diakses di laptop admin. Untuk bisa diinstall di HP guru, perlu di-upload ke hosting online.
+                    </div>
+                    
+                    <div class="bg-white p-3 rounded border text-xs text-gray-700 mb-3">
+                        <div class="font-semibold mb-2">📋 LANGKAH HOSTING GRATIS:</div>
+                        <div class="space-y-1">
+                            <div><strong>1. GitHub Pages (Gratis):</strong></div>
+                            <div class="ml-2">• Buat akun di github.com</div>
+                            <div class="ml-2">• Upload file HTML ini</div>
+                            <div class="ml-2">• Aktifkan GitHub Pages</div>
+                            <div class="ml-2">• Dapatkan link: username.github.io</div>
+                            
+                            <div class="mt-2"><strong>2. Netlify (Gratis):</strong></div>
+                            <div class="ml-2">• Buka netlify.com</div>
+                            <div class="ml-2">• Drag & drop file HTML</div>
+                            <div class="ml-2">• Dapatkan link otomatis</div>
+                            
+                            <div class="mt-2"><strong>3. Vercel (Gratis):</strong></div>
+                            <div class="ml-2">• Buka vercel.com</div>
+                            <div class="ml-2">• Upload file HTML</div>
+                            <div class="ml-2">• Deploy otomatis</div>
+                        </div>
+                    </div>
+                    
+                    <button id="showHostingGuide" class="w-full bg-blue-500 text-white py-2 rounded text-sm hover:bg-blue-600 mb-2">
+                        📖 Panduan Detail Hosting
+                    </button>
+                    
+                    <div class="text-xs text-red-600">
+                        Setelah di-hosting, link bisa dibagikan ke semua guru untuk install di HP
+                    </div>
+                </div>
+                
+                <!-- Share App Link (Hidden until hosted) -->
+                <div id="shareSection" class="bg-green-50 border border-green-200 rounded-lg p-4 max-w-md mx-auto mb-3 hidden">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-green-600">📤</span>
+                        <span class="font-medium text-green-800">Bagikan ke Guru</span>
+                    </div>
+                    <div class="text-sm text-green-700 mb-3">
+                        Kirim link ini ke guru-guru untuk install aplikasi di HP mereka:
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <input type="text" id="appShareLink" readonly 
+                               class="flex-1 px-3 py-2 border border-green-300 rounded text-sm bg-white"
+                               value="">
+                        <button id="copyAppLink" class="bg-green-500 text-white px-4 py-2 rounded text-sm hover:bg-green-600">
+                            📋 Salin
+                        </button>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="shareWhatsApp" class="flex-1 bg-green-600 text-white py-2 rounded text-sm hover:bg-green-700">
+                            📱 WhatsApp
+                        </button>
+                        <button id="shareEmail" class="flex-1 bg-blue-500 text-white py-2 rounded text-sm hover:bg-blue-600">
+                            📧 Email
+                        </button>
+                        <button id="shareGeneral" class="flex-1 bg-gray-500 text-white py-2 rounded text-sm hover:bg-gray-600">
+                            🔗 Bagikan
+                        </button>
+                    </div>
+                </div>
+                
+                <button id="adminModeToggle" class="text-blue-600 text-sm underline hover:text-blue-800">
+                    Saya Admin Sekolah
+                </button>
+            </div>
+        </div>
+
+        <!-- Hosting Guide Modal -->
+        <div id="hostingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold text-gray-800">📖 Panduan Hosting Aplikasi</h2>
+                            <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- GitHub Pages -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-gray-800 mb-3">🐙 GitHub Pages (Gratis & Mudah)</h3>
+                                <div class="text-sm text-gray-700 space-y-2">
+                                    <div><strong>Langkah 1:</strong> Buat akun di <a href="https://github.com" target="_blank" class="text-blue-600 underline">github.com</a></div>
+                                    <div><strong>Langkah 2:</strong> Klik "New repository" (repositori baru)</div>
+                                    <div><strong>Langkah 3:</strong> Nama repository: <code class="bg-gray-200 px-1 rounded">absensi-sekolah</code></div>
+                                    <div><strong>Langkah 4:</strong> Centang "Add a README file"</div>
+                                    <div><strong>Langkah 5:</strong> Klik "Create repository"</div>
+                                    <div><strong>Langkah 6:</strong> Upload file HTML ini (rename jadi <code class="bg-gray-200 px-1 rounded">index.html</code>)</div>
+                                    <div><strong>Langkah 7:</strong> Masuk Settings → Pages → Source: Deploy from branch</div>
+                                    <div><strong>Langkah 8:</strong> Pilih branch "main" → Save</div>
+                                    <div><strong>Langkah 9:</strong> Link akan tersedia di: <code class="bg-gray-200 px-1 rounded">https://username.github.io/absensi-sekolah</code></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Netlify -->
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-gray-800 mb-3">🌐 Netlify (Super Mudah)</h3>
+                                <div class="text-sm text-gray-700 space-y-2">
+                                    <div><strong>Langkah 1:</strong> Buka <a href="https://netlify.com" target="_blank" class="text-blue-600 underline">netlify.com</a></div>
+                                    <div><strong>Langkah 2:</strong> Klik "Sign up" (daftar gratis)</div>
+                                    <div><strong>Langkah 3:</strong> Setelah login, klik "Add new site" → "Deploy manually"</div>
+                                    <div><strong>Langkah 4:</strong> Drag & drop file HTML ini ke area upload</div>
+                                    <div><strong>Langkah 5:</strong> Tunggu proses deploy selesai</div>
+                                    <div><strong>Langkah 6:</strong> Link otomatis tersedia (bisa custom domain)</div>
+                                    <div class="bg-green-100 p-2 rounded text-xs"><strong>✅ Kelebihan:</strong> Paling mudah, drag-drop langsung jadi!</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Vercel -->
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-gray-800 mb-3">▲ Vercel (Cepat & Gratis)</h3>
+                                <div class="text-sm text-gray-700 space-y-2">
+                                    <div><strong>Langkah 1:</strong> Buka <a href="https://vercel.com" target="_blank" class="text-blue-600 underline">vercel.com</a></div>
+                                    <div><strong>Langkah 2:</strong> Klik "Sign up" dengan GitHub/Google</div>
+                                    <div><strong>Langkah 3:</strong> Klik "Add New" → "Project"</div>
+                                    <div><strong>Langkah 4:</strong> Upload file HTML atau connect dari GitHub</div>
+                                    <div><strong>Langkah 5:</strong> Klik "Deploy"</div>
+                                    <div><strong>Langkah 6:</strong> Link otomatis tersedia dalam hitungan detik</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tips -->
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-yellow-800 mb-3">💡 Tips Penting</h3>
+                                <div class="text-sm text-yellow-700 space-y-2">
+                                    <div>• <strong>Nama file:</strong> Harus <code class="bg-yellow-200 px-1 rounded">index.html</code> agar bisa diakses langsung</div>
+                                    <div>• <strong>HTTPS:</strong> Semua hosting gratis sudah support HTTPS (aman)</div>
+                                    <div>• <strong>Custom domain:</strong> Bisa pakai domain sekolah sendiri (opsional)</div>
+                                    <div>• <strong>Update:</strong> Tinggal upload file baru untuk update aplikasi</div>
+                                    <div>• <strong>Backup:</strong> Simpan file HTML di komputer sebagai backup</div>
+                                </div>
+                            </div>
+                            
+                            <!-- After Hosting -->
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="text-lg font-bold text-green-800 mb-3">🎉 Setelah Hosting Berhasil</h3>
+                                <div class="text-sm text-green-700 space-y-2">
+                                    <div>1. <strong>Test link:</strong> Buka link di HP untuk memastikan berfungsi</div>
+                                    <div>2. <strong>Bagikan ke guru:</strong> Kirim link via WhatsApp grup guru</div>
+                                    <div>3. <strong>Panduan install:</strong> Berikan instruksi cara install di HP</div>
+                                    <div>4. <strong>Setup sekolah:</strong> Generate kode sekolah untuk sinkronisasi</div>
+                                    <div>5. <strong>Training:</strong> Ajari guru cara menggunakan aplikasi</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <button id="closeModalBtn" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+                                Mengerti, Tutup Panduan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-white rounded-lg p-1 shadow-lg flex flex-wrap" id="mainTabs">
+                <button id="absenTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 bg-blue-500 text-white text-sm">
+                    📱 Absen Saya
+                </button>
+                <button id="historyTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    📋 Riwayat
+                </button>
+                <button id="profileTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    👤 Profil
+                </button>
+            </div>
+            
+            <!-- Admin Tabs (Hidden by default) -->
+            <div class="bg-white rounded-lg p-1 shadow-lg flex flex-wrap hidden" id="adminTabs">
+                <button id="scanTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 bg-blue-500 text-white text-sm">
+                    📷 Scan Absen
+                </button>
+                <button id="generateTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    🏷️ Buat Barcode
+                </button>
+                <button id="reportTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    📊 Laporan
+                </button>
+                <button id="syncTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    🔄 Sinkron Data
+                </button>
+                <button id="settingsTab" class="px-4 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-blue-500 text-sm">
+                    ⚙️ Pengaturan
+                </button>
+            </div>
+        </div>
+
+        <!-- Teacher Attendance Section -->
+        <div id="absenSection" class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">📱 Absen Guru</h2>
+                
+                <!-- Teacher Profile Setup -->
+                <div id="teacherSetup" class="mb-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                        <h3 class="font-bold text-blue-800 mb-3">👤 Data Guru</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="teacherName" placeholder="Nama lengkap" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <input type="text" id="teacherSubject" placeholder="Mata pelajaran" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <input type="text" id="teacherNIP" placeholder="NIP (opsional)" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <button id="saveTeacherProfile" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                💾 Simpan Profil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Attendance -->
+                <div id="quickAttendance" class="hidden">
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-6 mb-4">
+                        <div class="text-center mb-4">
+                            <div class="text-3xl mb-2">👋</div>
+                            <h3 class="text-xl font-bold text-gray-800" id="welcomeMessage">Selamat datang!</h3>
+                            <p class="text-gray-600" id="teacherInfo">Guru</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button id="absenMasuk" class="bg-green-500 text-white py-4 rounded-lg hover:bg-green-600 transition-colors font-medium">
+                                🌅 Absen Masuk
+                            </button>
+                            <button id="absenPulang" class="bg-blue-500 text-white py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                🌆 Absen Pulang
+                            </button>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <div class="text-sm text-gray-600">
+                                <div id="currentTime" class="font-medium"></div>
+                                <div id="locationStatus" class="text-xs mt-1">Mengecek lokasi...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Alternative Barcode Scanner (Only show if no profile) -->
+                <div id="alternativeScanner" class="hidden">
+                    <div class="relative bg-gray-100 rounded-lg p-6 mb-6 border-2 border-dashed border-gray-300">
+                        <div class="text-center">
+                            <div class="relative inline-block">
+                                <div class="w-64 h-32 bg-white rounded-lg shadow-inner flex items-center justify-center relative overflow-hidden">
+                                    <div class="scanner-line absolute w-full h-1 bg-red-500 opacity-70"></div>
+                                    <span class="text-gray-500 text-sm">Arahkan barcode ke sini</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mt-4">Atau masukkan kode manual:</p>
+                            <div class="flex gap-2 mt-2 justify-center">
+                                <input type="text" id="manualCodeTeacher" placeholder="Masukkan kode barcode" 
+                                       class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <button id="scanButtonTeacher" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                    Scan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scan Result -->
+                    <div id="scanResultTeacher" class="hidden">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <span class="text-2xl">✅</span>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-lg font-medium text-green-800">Absensi Berhasil!</h3>
+                                    <div id="attendanceInfoTeacher" class="text-green-700 mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Status -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">📅 Status Hari Ini</h3>
+                <div id="todayStatus" class="space-y-3">
+                    <!-- Today's attendance status will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher History Section -->
+        <div id="historySection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📋 Riwayat Absensi</h2>
+                
+                <!-- Filter -->
+                <div class="mb-6">
+                    <div class="flex gap-2">
+                        <input type="date" id="historyDate" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg">
+                        <button id="filterHistory" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Statistics -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-green-50 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-green-600" id="totalHadir">0</div>
+                        <div class="text-green-800 text-sm">Hari Hadir</div>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-orange-600" id="totalTerlambat">0</div>
+                        <div class="text-orange-800 text-sm">Terlambat</div>
+                    </div>
+                </div>
+                
+                <!-- History List -->
+                <div id="historyList" class="space-y-3">
+                    <!-- History records will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Profile Section -->
+        <div id="profileSection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">👤 Profil Guru</h2>
+                
+                <div class="space-y-6">
+                    <!-- Profile Info -->
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="font-bold text-gray-800 mb-3">Informasi Pribadi</h3>
+                        <div id="profileInfo" class="space-y-2 text-sm">
+                            <!-- Profile data will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Profile -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h3 class="font-bold text-blue-800 mb-3">Edit Profil</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="editTeacherName" placeholder="Nama lengkap" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <input type="text" id="editTeacherSubject" placeholder="Mata pelajaran" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <input type="text" id="editTeacherNIP" placeholder="NIP (opsional)" 
+                                   class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                            <button id="updateProfile" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                💾 Update Profil
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- App Info -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <h3 class="font-bold text-green-800 mb-3">Informasi Aplikasi</h3>
+                        <div class="text-sm text-green-700 space-y-1">
+                            <div>Versi: 1.0.0</div>
+                            <div>Status: <span id="appConnectionStatus">Belum terhubung</span></div>
+                            <div>Kode Sekolah: <span id="appSchoolCode">-</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Scan Section (Hidden by default) -->
+        <div id="scanSection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">📷 Scan Absensi</h2>
+                
+                <!-- Quick Teacher Attendance -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <h3 class="font-bold text-blue-800 mb-3">👨‍🏫 Absen Cepat Guru</h3>
+                    <div class="space-y-3">
+                        <input type="text" id="guruName" placeholder="Nama guru" 
+                               class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                        <input type="text" id="guruMapel" placeholder="Mata pelajaran" 
+                               class="w-full px-4 py-2 border border-blue-300 rounded-lg">
+                        <button id="quickAbsenGuru" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                            ⚡ Absen Cepat
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Scanner Area -->
+                <div class="relative bg-gray-100 rounded-lg p-6 mb-6 border-2 border-dashed border-gray-300">
+                    <div class="text-center">
+                        <div class="relative inline-block">
+                            <div class="w-64 h-32 bg-white rounded-lg shadow-inner flex items-center justify-center relative overflow-hidden">
+                                <div class="scanner-line absolute w-full h-1 bg-red-500 opacity-70"></div>
+                                <span class="text-gray-500 text-sm">Arahkan barcode ke sini</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">Atau masukkan kode manual:</p>
+                        <div class="flex gap-2 mt-2 justify-center">
+                            <input type="text" id="manualCode" placeholder="Masukkan kode barcode" 
+                                   class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <button id="scanButton" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                Scan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scan Result -->
+                <div id="scanResult" class="hidden">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <span class="text-2xl">✅</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-green-800">Absensi Berhasil!</h3>
+                                <div id="attendanceInfo" class="text-green-700 mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Status -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">📅 Absensi Hari Ini</h3>
+                <div id="todayAttendance" class="space-y-3">
+                    <!-- Today's attendance will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate Section -->
+        <div id="generateSection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">🏷️ Buat Barcode Guru</h2>
+                
+                <form id="generateForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                        <input type="text" id="userName" required 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                               placeholder="Masukkan nama lengkap guru">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Mata Pelajaran</label>
+                        <input type="text" id="userSubject" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                               placeholder="Contoh: Matematika">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">NIP (Opsional)</label>
+                        <input type="text" id="userNIP" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                               placeholder="Nomor Induk Pegawai">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                        🏷️ Buat Barcode Guru
+                    </button>
+                </form>
+                
+                <!-- Generated Barcode -->
+                <div id="generatedBarcode" class="hidden mt-8 text-center">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Barcode Guru Berhasil Dibuat!</h3>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <canvas id="barcodeCanvas" class="mx-auto mb-4"></canvas>
+                        <div id="barcodeInfo" class="text-sm text-gray-600 mb-4"></div>
+                        <button id="downloadBarcode" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                            💾 Download Barcode
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Section -->
+        <div id="reportSection" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📊 Laporan Absensi</h2>
+                
+                <!-- Filter -->
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <input type="date" id="filterDate" class="px-4 py-2 border border-gray-300 rounded-lg">
+                    
+                    <button id="exportReport" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                        📄 Export CSV
+                    </button>
+                </div>
+                
+                <!-- Statistics -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-blue-50 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-blue-600" id="totalToday">0</div>
+                        <div class="text-blue-800 font-medium text-sm">Absen Hari Ini</div>
+                    </div>
+                    <div class="bg-purple-50 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-purple-600" id="totalTeachers">0</div>
+                        <div class="text-purple-800 font-medium text-sm">Total Guru</div>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-orange-600" id="syncedDevices">0</div>
+                        <div class="text-orange-800 font-medium text-sm">Perangkat Tersinkron</div>
+                    </div>
+                </div>
+                
+                <!-- Attendance Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="border border-gray-300 px-4 py-2 text-left">Waktu</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Nama Guru</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Mata Pelajaran</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Perangkat</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportTable">
+                            <!-- Report data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settingsSection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">⚙️ Pengaturan Sistem</h2>
+                
+                <!-- Admin Only Notice -->
+                <div id="adminOnlyNotice" class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div class="flex items-center">
+                        <span class="text-red-500 text-xl mr-3">🚫</span>
+                        <div>
+                            <h3 class="font-bold text-red-800">Akses Terbatas</h3>
+                            <p class="text-red-700 text-sm">Pengaturan hanya dapat diakses oleh Admin Sekolah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Settings -->
+                <div id="timeSettings" class="space-y-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-blue-800 mb-4">🕐 Pengaturan Jam Absensi</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Jam Masuk -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Jam Masuk</label>
+                                <input type="time" id="jamMasuk" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <p class="text-xs text-gray-600 mt-1">Batas waktu untuk absen masuk</p>
+                            </div>
+                            
+                            <!-- Jam Pulang -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Jam Pulang</label>
+                                <input type="time" id="jamPulang" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <p class="text-xs text-gray-600 mt-1">Waktu mulai absen pulang</p>
+                            </div>
+                            
+                            <!-- Toleransi Keterlambatan -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Toleransi Terlambat (menit)</label>
+                                <input type="number" id="toleransiTerlambat" min="0" max="60" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <p class="text-xs text-gray-600 mt-1">Menit toleransi sebelum dianggap terlambat</p>
+                            </div>
+                            
+                            <!-- Batas Absen Pulang -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Batas Absen Pulang</label>
+                                <input type="time" id="batasAbsenPulang" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <p class="text-xs text-gray-600 mt-1">Batas maksimal untuk absen pulang</p>
+                            </div>
+                        </div>
+                        
+                        <button id="saveTimeSettings" class="mt-4 w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                            💾 Simpan Pengaturan Jam
+                        </button>
+                    </div>
+
+                    <!-- Attendance Rules -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-green-800 mb-4">📋 Aturan Absensi</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="font-medium">Wajib Absen Masuk</span>
+                                    <p class="text-sm text-gray-600">Siswa/guru harus absen masuk</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="wajibAbsenMasuk" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="font-medium">Wajib Absen Pulang</span>
+                                    <p class="text-sm text-gray-600">Siswa/guru harus absen pulang</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="wajibAbsenPulang" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="font-medium">Auto Detect Terlambat</span>
+                                    <p class="text-sm text-gray-600">Otomatis tandai terlambat berdasarkan jam</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="autoDetectTerlambat" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="saveAttendanceRules" class="mt-4 w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-medium">
+                            💾 Simpan Aturan Absensi
+                        </button>
+                    </div>
+
+                    <!-- Location Settings -->
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-purple-800 mb-4">📍 Pengaturan Lokasi Sekolah</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Latitude Sekolah</label>
+                                    <input type="number" id="schoolLat" step="any" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                           placeholder="-6.200000">
+                                    <p class="text-xs text-gray-600 mt-1">Koordinat latitude sekolah</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Longitude Sekolah</label>
+                                    <input type="number" id="schoolLng" step="any" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                           placeholder="106.816666">
+                                    <p class="text-xs text-gray-600 mt-1">Koordinat longitude sekolah</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Radius Absensi (meter)</label>
+                                <input type="number" id="schoolRadius" min="50" max="500" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                <p class="text-xs text-gray-600 mt-1">Jarak maksimal dari sekolah untuk bisa absen (50-500 meter)</p>
+                            </div>
+                            
+                            <div class="flex gap-2">
+                                <button id="getCurrentSchoolLocation" class="flex-1 bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition-colors font-medium">
+                                    📍 Gunakan Lokasi Saat Ini
+                                </button>
+                                <button id="saveLocationSettings" class="flex-1 bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium">
+                                    💾 Simpan Lokasi
+                                </button>
+                            </div>
+                            
+                            <div id="locationStatus" class="text-sm text-gray-600 bg-white p-3 rounded border">
+                                <div class="font-medium mb-1">Status Lokasi:</div>
+                                <div id="locationInfo">Lokasi sekolah belum diatur</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Settings Display -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">📊 Pengaturan Saat Ini</h3>
+                        <div id="currentSettings" class="space-y-2 text-sm">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sync Section -->
+        <div id="syncSection" class="max-w-2xl mx-auto hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">🔄 Sinkronisasi Data</h2>
+                
+                <!-- School Connection Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-medium">Status Koneksi Sekolah:</span>
+                        <span id="connectionStatus" class="px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-700">
+                            Belum Terhubung
+                        </span>
+                    </div>
+                    <div id="schoolInfo" class="text-sm text-gray-600">
+                        Masukkan kode sekolah untuk menghubungkan perangkat
+                    </div>
+                </div>
+
+                <!-- Sync Statistics -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-blue-50 rounded-lg p-4 text-center">
+                        <div class="text-xl font-bold text-blue-600" id="localRecords">0</div>
+                        <div class="text-blue-800 text-sm">Data Lokal</div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-4 text-center">
+                        <div class="text-xl font-bold text-green-600" id="lastSync">Belum Pernah</div>
+                        <div class="text-green-800 text-sm">Sinkron Terakhir</div>
+                    </div>
+                </div>
+
+                <!-- School Connection Guide -->
+                <div id="adminSchoolConnection" class="mb-6">
+                    <!-- Step 1: Generate New School Code -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-blue-600">🆕</span>
+                            <span class="font-medium text-blue-800">Langkah 1: Buat Kode Sekolah Baru</span>
+                        </div>
+                        <div class="text-sm text-blue-700 mb-3">
+                            Jika Anda adalah admin utama sekolah, buat kode sekolah baru terlebih dahulu:
+                        </div>
+                        <button id="generateSchoolCodeFirst" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium mb-2">
+                            🏫 Generate Kode Sekolah Baru
+                        </button>
+                        <div class="text-xs text-blue-600">
+                            Kode ini akan digunakan untuk menghubungkan semua perangkat di sekolah
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Connect to Existing School -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-yellow-600">🔗</span>
+                            <span class="font-medium text-yellow-800">Langkah 2: Hubungkan ke Sekolah</span>
+                        </div>
+                        <div class="text-sm text-yellow-700 mb-3">
+                            Jika sudah ada kode sekolah, masukkan kode tersebut:
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <input type="text" id="adminSchoolId" placeholder="Masukkan kode sekolah (contoh: SCH_123456)" 
+                                   class="flex-1 px-3 py-2 border border-yellow-300 rounded text-sm">
+                            <button id="connectAdminSchool" class="bg-yellow-500 text-white px-4 py-2 rounded text-sm hover:bg-yellow-600">
+                                Hubungkan
+                            </button>
+                        </div>
+                        <div class="text-xs text-yellow-700">
+                            Minta kode sekolah dari admin utama jika belum memiliki
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sync Actions -->
+                <div class="space-y-4">
+                    <button id="uploadData" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                        📤 Upload Data ke Server Pusat
+                    </button>
+                    
+                    <button id="downloadData" class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-medium">
+                        📥 Download Data dari Server Pusat
+                    </button>
+                    
+                    <button id="generateSchoolCode" class="w-full bg-purple-500 text-white py-3 rounded-lg hover:bg-purple-600 transition-colors font-medium">
+                        🏫 Generate Kode Sekolah (Admin Only)
+                    </button>
+                    
+                    <button id="disconnectSchool" class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-medium">
+                        🔌 Putuskan Koneksi Sekolah
+                    </button>
+                </div>
+
+                <!-- Sync Log -->
+                <div class="mt-6">
+                    <h3 class="font-bold text-gray-800 mb-3">📋 Log Sinkronisasi</h3>
+                    <div id="syncLog" class="bg-gray-50 rounded-lg p-4 max-h-40 overflow-y-auto text-sm">
+                        <div class="text-gray-500">Belum ada aktivitas sinkronisasi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage with school sync capability
+        let users = JSON.parse(localStorage.getItem('attendanceUsers') || '[]');
+        let attendanceRecords = JSON.parse(localStorage.getItem('attendanceRecords') || '[]');
+        let schoolConfig = JSON.parse(localStorage.getItem('schoolConfig') || '{}');
+        let syncLog = JSON.parse(localStorage.getItem('syncLog') || '[]');
+        
+        // Time settings with defaults
+        let timeSettings = JSON.parse(localStorage.getItem('timeSettings') || JSON.stringify({
+            jamMasuk: '07:00',
+            jamPulang: '15:00',
+            toleransiTerlambat: 15,
+            batasAbsenPulang: '17:00',
+            wajibAbsenMasuk: true,
+            wajibAbsenPulang: true,
+            autoDetectTerlambat: true
+        }));
+
+        // Current user mode and teacher profile
+        let currentMode = localStorage.getItem('userMode') || 'teacher';
+        let teacherProfile = JSON.parse(localStorage.getItem('teacherProfile') || '{}');
+        
+        // PWA Install
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').classList.remove('hidden');
+        });
+
+        document.getElementById('installButton').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('installPrompt').classList.add('hidden');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        // Hosting guide modal
+        document.getElementById('showHostingGuide').addEventListener('click', function() {
+            document.getElementById('hostingModal').classList.remove('hidden');
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('hostingModal').classList.add('hidden');
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('hostingModal').classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('hostingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+
+        // Tab switching for teacher mode
+        const teacherTabs = ['absenTab', 'historyTab', 'profileTab'];
+        const teacherSections = ['absenSection', 'historySection', 'profileSection'];
+        
+        // Tab switching for admin mode
+        const adminTabs = ['scanTab', 'generateTab', 'reportTab', 'syncTab', 'settingsTab'];
+        const adminSections = ['scanSection', 'generateSection', 'reportSection', 'syncSection', 'settingsSection'];
+
+        // Teacher tab switching
+        teacherTabs.forEach((tabId, index) => {
+            document.getElementById(tabId).addEventListener('click', () => {
+                // Update tab styles
+                teacherTabs.forEach(tab => {
+                    const element = document.getElementById(tab);
+                    element.classList.remove('bg-blue-500', 'text-white');
+                    element.classList.add('text-gray-600');
+                });
+                document.getElementById(tabId).classList.add('bg-blue-500', 'text-white');
+                document.getElementById(tabId).classList.remove('text-gray-600');
+
+                // Show/hide sections
+                teacherSections.forEach(section => {
+                    document.getElementById(section).classList.add('hidden');
+                });
+                document.getElementById(teacherSections[index]).classList.remove('hidden');
+
+                // Update data when switching tabs
+                if (tabId === 'absenTab') {
+                    updateTeacherDashboard();
+                }
+                if (tabId === 'historyTab') {
+                    updateTeacherHistory();
+                }
+                if (tabId === 'profileTab') {
+                    updateTeacherProfile();
+                }
+            });
+        });
+
+        // Admin tab switching
+        adminTabs.forEach((tabId, index) => {
+            document.getElementById(tabId).addEventListener('click', () => {
+                // Update tab styles
+                adminTabs.forEach(tab => {
+                    const element = document.getElementById(tab);
+                    element.classList.remove('bg-blue-500', 'text-white');
+                    element.classList.add('text-gray-600');
+                });
+                document.getElementById(tabId).classList.add('bg-blue-500', 'text-white');
+                document.getElementById(tabId).classList.remove('text-gray-600');
+
+                // Show/hide sections
+                adminSections.forEach(section => {
+                    document.getElementById(section).classList.add('hidden');
+                });
+                document.getElementById(adminSections[index]).classList.remove('hidden');
+
+                // Update data when switching tabs
+                if (tabId === 'reportTab') {
+                    updateReport();
+                }
+                if (tabId === 'scanTab') {
+                    updateTodayAttendance();
+                }
+                if (tabId === 'syncTab') {
+                    updateSyncSection();
+                }
+                if (tabId === 'settingsTab') {
+                    updateSettingsSection();
+                }
+            });
+        });
+
+        // Mode switching
+        document.getElementById('adminModeToggle').addEventListener('click', function() {
+            if (currentMode === 'teacher') {
+                currentMode = 'admin';
+                localStorage.setItem('userMode', currentMode);
+                updateUIForMode();
+            } else {
+                currentMode = 'teacher';
+                localStorage.setItem('userMode', currentMode);
+                updateUIForMode();
+            }
+        });
+
+        // Update UI based on user mode
+        function updateUIForMode() {
+            const mainTabs = document.getElementById('mainTabs');
+            const adminTabs = document.getElementById('adminTabs');
+            const schoolConnection = document.getElementById('schoolConnection');
+            const adminToggle = document.getElementById('adminModeToggle');
+            
+            if (currentMode === 'teacher') {
+                mainTabs.classList.remove('hidden');
+                adminTabs.classList.add('hidden');
+                schoolConnection.classList.remove('hidden');
+                adminToggle.textContent = 'Saya Admin Sekolah';
+                
+                // Show teacher sections, hide admin sections
+                teacherSections.forEach(section => {
+                    if (section === 'absenSection') {
+                        document.getElementById(section).classList.remove('hidden');
+                    } else {
+                        document.getElementById(section).classList.add('hidden');
+                    }
+                });
+                adminSections.forEach(section => {
+                    document.getElementById(section).classList.add('hidden');
+                });
+                
+                updateTeacherDashboard();
+            } else {
+                mainTabs.classList.add('hidden');
+                adminTabs.classList.remove('hidden');
+                schoolConnection.classList.add('hidden');
+                adminToggle.textContent = 'Mode Guru';
+                
+                // Show admin sections, hide teacher sections
+                teacherSections.forEach(section => {
+                    document.getElementById(section).classList.add('hidden');
+                });
+                adminSections.forEach(section => {
+                    if (section === 'scanSection') {
+                        document.getElementById(section).classList.remove('hidden');
+                    } else {
+                        document.getElementById(section).classList.add('hidden');
+                    }
+                });
+                
+                updateTodayAttendance();
+            }
+        }
+
+        // Teacher profile management
+        document.getElementById('saveTeacherProfile').addEventListener('click', function() {
+            const name = document.getElementById('teacherName').value.trim();
+            const subject = document.getElementById('teacherSubject').value.trim();
+            const nip = document.getElementById('teacherNIP').value.trim();
+            
+            if (!name || !subject) {
+                alert('Nama dan mata pelajaran wajib diisi!');
+                return;
+            }
+            
+            teacherProfile = {
+                name: name,
+                subject: subject,
+                nip: nip,
+                createdAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('teacherProfile', JSON.stringify(teacherProfile));
+            updateTeacherDashboard();
+            alert('Profil berhasil disimpan!');
+        });
+
+        // Update teacher profile
+        document.getElementById('updateProfile').addEventListener('click', function() {
+            const name = document.getElementById('editTeacherName').value.trim();
+            const subject = document.getElementById('editTeacherSubject').value.trim();
+            const nip = document.getElementById('editTeacherNIP').value.trim();
+            
+            if (!name || !subject) {
+                alert('Nama dan mata pelajaran wajib diisi!');
+                return;
+            }
+            
+            teacherProfile.name = name;
+            teacherProfile.subject = subject;
+            teacherProfile.nip = nip;
+            
+            localStorage.setItem('teacherProfile', JSON.stringify(teacherProfile));
+            updateTeacherProfile();
+            alert('Profil berhasil diupdate!');
+        });
+
+        // Teacher attendance buttons
+        document.getElementById('absenMasuk').addEventListener('click', async function() {
+            await performTeacherAttendance('masuk', this);
+        });
+
+        document.getElementById('absenPulang').addEventListener('click', async function() {
+            await performTeacherAttendance('pulang', this);
+        });
+
+        // Perform teacher attendance
+        async function performTeacherAttendance(type, button) {
+            if (!teacherProfile.name) {
+                alert('Lengkapi profil terlebih dahulu!');
+                return;
+            }
+
+            // Show loading
+            const originalText = button.textContent;
+            button.textContent = 'Memvalidasi...';
+            button.disabled = true;
+
+            try {
+                // Get current location
+                await getCurrentLocation();
+
+                // Validate location
+                const locationValidation = validateLocation();
+
+                // Get current time and validate
+                const now = new Date();
+                const currentTime = now.toTimeString().slice(0, 5);
+                
+                // Check if this attendance type is allowed at current time
+                if (type === 'masuk') {
+                    const timeValidation = validateAttendanceTime(currentTime);
+                    if (timeValidation.period !== 'masuk') {
+                        throw new Error('Waktu absen masuk sudah terlewat!');
+                    }
+                } else {
+                    const timeValidation = validateAttendanceTime(currentTime);
+                    if (timeValidation.period !== 'pulang') {
+                        throw new Error('Belum waktunya absen pulang!');
+                    }
+                }
+
+                // Check if already attended today for this type
+                const today = new Date().toDateString();
+                const existingRecord = attendanceRecords.find(r => 
+                    r.userName === teacherProfile.name && 
+                    new Date(r.timestamp).toDateString() === today &&
+                    r.attendanceType === type
+                );
+
+                if (existingRecord) {
+                    throw new Error(`Anda sudah absen ${type} hari ini!`);
+                }
+
+                // Determine attendance status
+                const attendanceStatus = determineAttendanceStatus(currentTime, type);
+
+                // Create attendance record
+                const record = {
+                    id: 'ATT_' + Date.now(),
+                    userId: 'TEACHER_' + teacherProfile.name.replace(/\s+/g, '_'),
+                    userName: teacherProfile.name,
+                    userType: 'guru',
+                    userClass: null,
+                    userSubject: teacherProfile.subject,
+                    timestamp: new Date().toISOString(),
+                    status: attendanceStatus.status,
+                    attendanceType: type,
+                    isLate: attendanceStatus.isLate,
+                    device: 'teacher_mobile',
+                    schoolId: schoolConfig.schoolId || 'local',
+                    location: {
+                        lat: currentUserLocation.lat,
+                        lng: currentUserLocation.lng,
+                        distance: locationValidation.distance,
+                        accuracy: currentUserLocation.accuracy
+                    }
+                };
+
+                attendanceRecords.push(record);
+                localStorage.setItem('attendanceRecords', JSON.stringify(attendanceRecords));
+
+                // Show success
+                const statusText = attendanceStatus.isLate ? 'Terlambat' : (type === 'masuk' ? 'Tepat Waktu' : 'Pulang');
+                alert(`✅ Absen ${type} berhasil!\nStatus: ${statusText}\nJarak: ${locationValidation.distance}m dari sekolah`);
+                
+                // Update display
+                updateTeacherDashboard();
+                
+                // Auto sync if connected
+                if (schoolConfig.schoolId) {
+                    autoSync();
+                }
+
+            } catch (error) {
+                alert(error.message);
+            } finally {
+                // Reset button
+                button.textContent = originalText;
+                button.disabled = false;
+            }
+        }
+
+        // Update teacher dashboard
+        function updateTeacherDashboard() {
+            const teacherSetup = document.getElementById('teacherSetup');
+            const quickAttendance = document.getElementById('quickAttendance');
+            const alternativeScanner = document.getElementById('alternativeScanner');
+            
+            if (!teacherProfile.name) {
+                teacherSetup.classList.remove('hidden');
+                quickAttendance.classList.add('hidden');
+                alternativeScanner.classList.remove('hidden'); // Show barcode scanner as alternative
+                return;
+            }
+            
+            teacherSetup.classList.add('hidden');
+            quickAttendance.classList.remove('hidden');
+            alternativeScanner.classList.add('hidden'); // Hide barcode scanner when profile exists
+            
+            // Update welcome message
+            document.getElementById('welcomeMessage').textContent = `Halo, ${teacherProfile.name}!`;
+            document.getElementById('teacherInfo').textContent = `Guru ${teacherProfile.subject}`;
+            
+            // Update current time
+            updateCurrentTime();
+            
+            // Check location
+            checkLocationStatus();
+            
+            // Update today's status
+            updateTodayTeacherStatus();
+            
+            // Update attendance buttons based on today's records
+            updateAttendanceButtons();
+        }
+
+        // Update current time
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID');
+            const dateString = now.toLocaleDateString('id-ID', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            document.getElementById('currentTime').innerHTML = `
+                <div>${timeString}</div>
+                <div class="text-xs">${dateString}</div>
+            `;
+        }
+
+        // Check location status
+        async function checkLocationStatus() {
+            const statusElement = document.getElementById('locationStatus');
+            
+            try {
+                await getCurrentLocation();
+                const validation = validateLocation();
+                statusElement.innerHTML = `📍 ${validation.distance}m dari sekolah`;
+                statusElement.className = 'text-xs mt-1 text-green-600';
+            } catch (error) {
+                statusElement.innerHTML = `⚠️ ${error.message}`;
+                statusElement.className = 'text-xs mt-1 text-red-600';
+            }
+        }
+
+        // Update today's teacher status
+        function updateTodayTeacherStatus() {
+            if (!teacherProfile.name) return;
+            
+            const today = new Date().toDateString();
+            const todayRecords = attendanceRecords.filter(r => 
+                r.userName === teacherProfile.name && 
+                new Date(r.timestamp).toDateString() === today
+            );
+            
+            const container = document.getElementById('todayStatus');
+            
+            if (todayRecords.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-4">Belum ada absensi hari ini</p>';
+                return;
+            }
+            
+            container.innerHTML = todayRecords.map(record => {
+                const time = new Date(record.timestamp).toLocaleTimeString('id-ID');
+                const statusIcon = record.isLate ? '⚠️' : '✅';
+                const statusText = record.isLate ? 'Terlambat' : (record.attendanceType === 'masuk' ? 'Tepat Waktu' : 'Pulang');
+                const typeText = record.attendanceType === 'masuk' ? 'Masuk' : 'Pulang';
+                
+                return `
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-xl mr-3">${statusIcon}</span>
+                            <div>
+                                <div class="font-medium text-gray-800">Absen ${typeText}</div>
+                                <div class="text-sm text-gray-600">${statusText}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-gray-800">${time}</div>
+                            <div class="text-xs text-gray-500">${record.location ? record.location.distance + 'm' : ''}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update attendance buttons
+        function updateAttendanceButtons() {
+            if (!teacherProfile.name) return;
+            
+            const today = new Date().toDateString();
+            const todayRecords = attendanceRecords.filter(r => 
+                r.userName === teacherProfile.name && 
+                new Date(r.timestamp).toDateString() === today
+            );
+            
+            const masukButton = document.getElementById('absenMasuk');
+            const pulangButton = document.getElementById('absenPulang');
+            
+            const hasMasuk = todayRecords.some(r => r.attendanceType === 'masuk');
+            const hasPulang = todayRecords.some(r => r.attendanceType === 'pulang');
+            
+            if (hasMasuk) {
+                masukButton.textContent = '✅ Sudah Masuk';
+                masukButton.disabled = true;
+                masukButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+                masukButton.classList.add('bg-gray-400');
+            } else {
+                masukButton.textContent = '🌅 Absen Masuk';
+                masukButton.disabled = false;
+                masukButton.classList.add('bg-green-500', 'hover:bg-green-600');
+                masukButton.classList.remove('bg-gray-400');
+            }
+            
+            if (hasPulang) {
+                pulangButton.textContent = '✅ Sudah Pulang';
+                pulangButton.disabled = true;
+                pulangButton.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                pulangButton.classList.add('bg-gray-400');
+            } else {
+                pulangButton.textContent = '🌆 Absen Pulang';
+                pulangButton.disabled = false;
+                pulangButton.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                pulangButton.classList.remove('bg-gray-400');
+            }
+        }
+
+        // Quick guru attendance (for admin mode)
+        document.getElementById('quickAbsenGuru').addEventListener('click', async function() {
+            const name = document.getElementById('guruName').value.trim();
+            const mapel = document.getElementById('guruMapel').value.trim();
+            
+            if (!name || !mapel) {
+                alert('Mohon isi nama dan mata pelajaran!');
+                return;
+            }
+
+            // Show loading
+            this.textContent = 'Memvalidasi...';
+            this.disabled = true;
+
+            try {
+                // Get current location
+                await getCurrentLocation();
+
+                // Validate location
+                const locationValidation = validateLocation();
+
+                // Get current time and validate
+                const now = new Date();
+                const currentTime = now.toTimeString().slice(0, 5); // HH:MM format
+                const timeValidation = validateAttendanceTime(currentTime);
+
+                // Check if already attended today for this period
+                const today = new Date().toDateString();
+                const existingRecord = attendanceRecords.find(r => 
+                    r.userName === name && r.userType === 'guru' && 
+                    new Date(r.timestamp).toDateString() === today &&
+                    r.attendanceType === timeValidation.period
+                );
+
+                if (existingRecord) {
+                    throw new Error(`Anda sudah absen ${timeValidation.period} hari ini!`);
+                }
+
+                // Determine attendance status
+                const attendanceStatus = determineAttendanceStatus(currentTime, timeValidation.period);
+
+                // Create attendance record
+                const record = {
+                    id: 'ATT_' + Date.now(),
+                    userId: 'GURU_' + name.replace(/\s+/g, '_'),
+                    userName: name,
+                    userType: 'guru',
+                    userClass: null,
+                    userSubject: mapel,
+                    timestamp: new Date().toISOString(),
+                    status: attendanceStatus.status,
+                    attendanceType: timeValidation.period,
+                    isLate: attendanceStatus.isLate,
+                    device: 'guru_mobile',
+                    schoolId: schoolConfig.schoolId || 'local',
+                    location: {
+                        lat: currentUserLocation.lat,
+                        lng: currentUserLocation.lng,
+                        distance: locationValidation.distance,
+                        accuracy: currentUserLocation.accuracy
+                    }
+                };
+
+                attendanceRecords.push(record);
+                localStorage.setItem('attendanceRecords', JSON.stringify(attendanceRecords));
+
+                // Show success with location info
+                showAttendanceSuccess(record, locationValidation.distance);
+                
+                // Clear form
+                document.getElementById('guruName').value = '';
+                document.getElementById('guruMapel').value = '';
+                
+                // Update display
+                updateTodayAttendance();
+                
+                // Auto sync if connected
+                if (schoolConfig.schoolId) {
+                    autoSync();
+                }
+
+            } catch (error) {
+                alert(error.message);
+            } finally {
+                // Reset button
+                this.textContent = 'Absen';
+                this.disabled = false;
+            }
+        });
+
+        // Update teacher history
+        function updateTeacherHistory() {
+            if (!teacherProfile.name) {
+                document.getElementById('historyList').innerHTML = '<p class="text-gray-500 text-center py-4">Lengkapi profil terlebih dahulu</p>';
+                return;
+            }
+            
+            const filterDate = document.getElementById('historyDate').value;
+            let records = attendanceRecords.filter(r => r.userName === teacherProfile.name);
+            
+            if (filterDate) {
+                const selectedDate = new Date(filterDate).toDateString();
+                records = records.filter(r => new Date(r.timestamp).toDateString() === selectedDate);
+            }
+            
+            records.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            // Update statistics
+            const hadirCount = records.filter(r => !r.isLate).length;
+            const terlambatCount = records.filter(r => r.isLate).length;
+            
+            document.getElementById('totalHadir').textContent = hadirCount;
+            document.getElementById('totalTerlambat').textContent = terlambatCount;
+            
+            // Update history list
+            const container = document.getElementById('historyList');
+            
+            if (records.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-4">Tidak ada riwayat absensi</p>';
+                return;
+            }
+            
+            container.innerHTML = records.map(record => {
+                const date = new Date(record.timestamp);
+                const dateString = date.toLocaleDateString('id-ID');
+                const timeString = date.toLocaleTimeString('id-ID');
+                const statusIcon = record.isLate ? '⚠️' : '✅';
+                const statusText = record.isLate ? 'Terlambat' : (record.attendanceType === 'masuk' ? 'Tepat Waktu' : 'Pulang');
+                const typeText = record.attendanceType === 'masuk' ? 'Masuk' : 'Pulang';
+                
+                return `
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-xl mr-3">${statusIcon}</span>
+                            <div>
+                                <div class="font-medium text-gray-800">${dateString}</div>
+                                <div class="text-sm text-gray-600">Absen ${typeText} - ${statusText}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-gray-800">${timeString}</div>
+                            <div class="text-xs text-gray-500">${record.location ? record.location.distance + 'm' : ''}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update teacher profile section
+        function updateTeacherProfile() {
+            const profileInfo = document.getElementById('profileInfo');
+            const appConnectionStatus = document.getElementById('appConnectionStatus');
+            const appSchoolCode = document.getElementById('appSchoolCode');
+            
+            if (!teacherProfile.name) {
+                profileInfo.innerHTML = '<div class="text-gray-500">Profil belum diatur</div>';
+            } else {
+                profileInfo.innerHTML = `
+                    <div><strong>Nama:</strong> ${teacherProfile.name}</div>
+                    <div><strong>Mata Pelajaran:</strong> ${teacherProfile.subject}</div>
+                    <div><strong>NIP:</strong> ${teacherProfile.nip || '-'}</div>
+                    <div><strong>Terdaftar:</strong> ${new Date(teacherProfile.createdAt).toLocaleDateString('id-ID')}</div>
+                `;
+                
+                // Load current data to edit form
+                document.getElementById('editTeacherName').value = teacherProfile.name;
+                document.getElementById('editTeacherSubject').value = teacherProfile.subject;
+                document.getElementById('editTeacherNIP').value = teacherProfile.nip || '';
+            }
+            
+            // Update connection status
+            if (schoolConfig.schoolId) {
+                appConnectionStatus.textContent = 'Terhubung';
+                appConnectionStatus.className = 'text-green-600';
+                appSchoolCode.textContent = schoolConfig.schoolId;
+            } else {
+                appConnectionStatus.textContent = 'Belum terhubung';
+                appConnectionStatus.className = 'text-red-600';
+                appSchoolCode.textContent = '-';
+            }
+        }
+
+        // Filter history
+        document.getElementById('filterHistory').addEventListener('click', function() {
+            updateTeacherHistory();
+        });
+
+        // School connection
+        document.getElementById('connectSchool').addEventListener('click', function() {
+            const schoolId = document.getElementById('schoolId').value.trim();
+            if (!schoolId) {
+                alert('Masukkan kode sekolah!');
+                return;
+            }
+
+            // Simulate connection (in real app, this would connect to server)
+            schoolConfig.schoolId = schoolId;
+            schoolConfig.connectedAt = new Date().toISOString();
+            schoolConfig.deviceId = 'DEV_' + Date.now();
+            localStorage.setItem('schoolConfig', JSON.stringify(schoolConfig));
+
+            updateConnectionStatus();
+            addSyncLog('Terhubung ke sekolah: ' + schoolId);
+            
+            alert('Berhasil terhubung ke sekolah!');
+        });
+
+        // Update connection status
+        function updateConnectionStatus() {
+            const statusElement = document.getElementById('connectionStatus');
+            
+            if (schoolConfig.schoolId) {
+                statusElement.innerHTML = `✅ Terhubung ke: ${schoolConfig.schoolId}`;
+                statusElement.className = 'text-xs text-green-700';
+            } else {
+                statusElement.innerHTML = 'Minta kode sekolah dari admin untuk sinkronisasi data';
+                statusElement.className = 'text-xs text-yellow-700';
+            }
+        }
+
+        // Generate form is now teacher-only, no switching needed
+
+        // Generate barcode for teachers only
+        document.getElementById('generateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userName = document.getElementById('userName').value.trim();
+            const userSubject = document.getElementById('userSubject').value.trim();
+            const userNIP = document.getElementById('userNIP').value.trim();
+
+            if (!userName || !userSubject) {
+                alert('Nama dan mata pelajaran wajib diisi!');
+                return;
+            }
+
+            // Generate unique ID
+            const userId = 'GURU_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            
+            // Create teacher object
+            const user = {
+                id: userId,
+                name: userName,
+                type: 'guru',
+                class: null,
+                nis: null,
+                subject: userSubject,
+                nip: userNIP || null,
+                createdAt: new Date().toISOString(),
+                schoolId: schoolConfig.schoolId || 'local'
+            };
+
+            // Save user
+            users.push(user);
+            localStorage.setItem('attendanceUsers', JSON.stringify(users));
+
+            // Generate barcode
+            const canvas = document.getElementById('barcodeCanvas');
+            JsBarcode(canvas, userId, {
+                format: "CODE128",
+                width: 2,
+                height: 100,
+                displayValue: true
+            });
+
+            // Show barcode info
+            const info = `${userName} - ${userSubject}${userNIP ? ' (' + userNIP + ')' : ''}`;
+            
+            document.getElementById('barcodeInfo').textContent = info;
+            document.getElementById('generatedBarcode').classList.remove('hidden');
+
+            // Reset form
+            this.reset();
+        });
+
+        // Download barcode
+        document.getElementById('downloadBarcode').addEventListener('click', function() {
+            const canvas = document.getElementById('barcodeCanvas');
+            const link = document.createElement('a');
+            link.download = 'barcode.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+
+        // Scan barcode
+        document.getElementById('scanButton').addEventListener('click', async function() {
+            const code = document.getElementById('manualCode').value.trim();
+            if (!code) {
+                alert('Masukkan kode barcode terlebih dahulu!');
+                return;
+            }
+
+            // Show loading
+            this.textContent = 'Memvalidasi...';
+            this.disabled = true;
+
+            try {
+                // Get current location
+                await getCurrentLocation();
+
+                // Validate location
+                const locationValidation = validateLocation();
+
+                // Get current time and validate
+                const now = new Date();
+                const currentTime = now.toTimeString().slice(0, 5); // HH:MM format
+                const timeValidation = validateAttendanceTime(currentTime);
+
+                // Find user
+                const user = users.find(u => u.id === code);
+                if (!user) {
+                    throw new Error('Kode barcode tidak ditemukan!');
+                }
+
+                // Check if already attended today for this period
+                const today = new Date().toDateString();
+                const existingRecord = attendanceRecords.find(r => 
+                    r.userId === user.id && 
+                    new Date(r.timestamp).toDateString() === today &&
+                    r.attendanceType === timeValidation.period
+                );
+
+                if (existingRecord) {
+                    throw new Error(`Sudah absen ${timeValidation.period} hari ini!`);
+                }
+
+                // Determine attendance status
+                const attendanceStatus = determineAttendanceStatus(currentTime, timeValidation.period);
+
+                // Create attendance record
+                const record = {
+                    id: 'ATT_' + Date.now(),
+                    userId: user.id,
+                    userName: user.name,
+                    userType: user.type,
+                    userClass: user.class,
+                    userSubject: user.subject,
+                    timestamp: new Date().toISOString(),
+                    status: attendanceStatus.status,
+                    attendanceType: timeValidation.period,
+                    isLate: attendanceStatus.isLate,
+                    device: currentMode === 'guru' ? 'guru_mobile' : 'admin_device',
+                    schoolId: schoolConfig.schoolId || 'local',
+                    location: {
+                        lat: currentUserLocation.lat,
+                        lng: currentUserLocation.lng,
+                        distance: locationValidation.distance,
+                        accuracy: currentUserLocation.accuracy
+                    }
+                };
+
+                attendanceRecords.push(record);
+                localStorage.setItem('attendanceRecords', JSON.stringify(attendanceRecords));
+
+                // Show success with location info
+                showAttendanceSuccess(record, locationValidation.distance);
+
+                // Clear input
+                document.getElementById('manualCode').value = '';
+
+                // Update display
+                updateTodayAttendance();
+
+                // Auto sync if connected
+                if (schoolConfig.schoolId) {
+                    autoSync();
+                }
+
+            } catch (error) {
+                alert(error.message);
+            } finally {
+                // Reset button
+                this.textContent = 'Scan';
+                this.disabled = false;
+            }
+        });
+
+        // Show attendance success
+        function showAttendanceSuccess(record, distance = null) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID');<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98905005348b0fad',t:'MTc1OTUzNTEyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
